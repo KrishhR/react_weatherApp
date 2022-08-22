@@ -1,38 +1,131 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background: url(https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.container{
   text-align: center;
+  padding: 2rem;
+  width: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#user_loc{
+  width: 75%;
+  margin: auto;
+  margin-top: 4vh;
+  padding: 1.5vw;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 2vw;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#weather{
+  margin-top: 2rem;
+  width: 100%;
+  height: 63.5vh;
+  padding: 2rem 4rem;
   display: flex;
+}
+.currentTemp{
+  width: max-content;
+  margin: auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+#error{
+  color: red;
+  margin-top: 4vh;
+}
+.temp{
+  font-size: 6vw;
+  font-weight: 800;
+}
+.temp>sup{
+  font-size: medium;
+}
+.first{
+  width: 50%;
+  padding: 1vw;
+  margin-right: 2rem;
+  margin: 0 auto;
+}
+.second{
+  width: 40%;
+  margin: 0 auto;
+  padding: 2vw;
+  font-size: 1.8vw;
+  line-height: 5vh;
+  display: flex;
+  margin-top: 2rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width:900px) {
+  #weather {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #user_loc{
+    font-size: 2vw;
+    padding: 1.5vw 3vw;
+  }
+  .first{
+    width: fit-content;
+    margin-top: -3rem;
+    font-size: small;
+  }
+  .second{
+    width: fit-content;
+    font-size: medium;
+  }
+}
+@media only screen and (max-width:450px) {
+  #weather {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #user_loc{
+    font-size: 3.5vw;
+    padding: 2vw 3vw;
+  }
+  #img{
+    width: 50%;
+  }
+  .first{
+    width: fit-content;
+    margin: auto;
+    font-size: small;
+  }
+  .second{
+    width: fit-content;
+    font-size: medium;
+  }
+}
+@media only screen and (max-width:360px) {
+  #weather {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .first{
+    border: 1px solid;
+    width: max-content;
+    margin-left: -20%;
+    font-size: small;
+  }
+  .second{
+    width: fit-content;
+    font-size: medium;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
