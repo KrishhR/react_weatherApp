@@ -5,13 +5,14 @@ import { Button, IconButton, Snackbar } from "@mui/material";
 import AirIcon from "@mui/icons-material/Air";
 import axios from "axios";
 
-let theme = "";  //variable for changing the theme
+let theme = ""; //variable for changing the theme
 
 function App() {
-  const [open, setOpen] = useState(false);  //state for error in SNACKBAR
+  const [open, setOpen] = useState(false); //state for error in SNACKBAR
   let [count, setCount] = useState(0);
 
-  let [location, setLocation] = useState({   //Location State
+  let [location, setLocation] = useState({
+    //Location State
     location: {
       name: "",
       region: "",
@@ -112,8 +113,7 @@ function App() {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover";
         setCount((count) => count + 1);
-      }
-       else if (
+      } else if (
         location.current.condition.text.toLowerCase().indexOf("cloud") > -1 ||
         location.current.condition.text.toLowerCase().indexOf("mist") > -1 ||
         location.current.condition.text.toLowerCase().indexOf("overcast") > -1
@@ -125,8 +125,7 @@ function App() {
         document.body.style.backgroundSize = "cover";
         setCount((count) => count + 1);
         console.log(count);
-      }
-       else if (
+      } else if (
         location.current.condition.text.toLowerCase().indexOf("rain") > -1 ||
         location.current.condition.text.toLowerCase().indexOf("drizz") > -1
       ) {
@@ -137,13 +136,12 @@ function App() {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover";
         setCount((count) => count + 1);
-      }
-      else if(
+      } else if (
         location.current.condition.text.toLowerCase().indexOf("freez") > -1 ||
         location.current.condition.text.toLowerCase().indexOf("snow") > -1 ||
         location.current.condition.text.toLowerCase().indexOf("sleet") > -1 ||
-        location.current.condition.text.toLowerCase().indexOf("blizzard") > -1 
-      ){
+        location.current.condition.text.toLowerCase().indexOf("blizzard") > -1
+      ) {
         theme =
           "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2020%2F12%2F18%2Fsnow-storm-blizzard-getty-1220-2000.jpg";
         document.body.style.background = `url(${theme})`;
@@ -151,18 +149,16 @@ function App() {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover";
         setCount((count) => count + 1);
-      }
-      else if(
-        location.current.condition.text.toLowerCase().indexOf("fog") > -1 
-      ){
+      } else if (
+        location.current.condition.text.toLowerCase().indexOf("fog") > -1
+      ) {
         theme =
           "https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/fog--mist/fog-on-a-country-road.jpg";
         document.body.style.background = `url(${theme})`;
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover";
         setCount((count) => count + 1);
-      }
-       else {
+      } else {
         theme =
           "https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg";
         document.body.style.background = `url(${theme})`;
@@ -178,6 +174,8 @@ function App() {
       <div className="container" id="cont">
         <h1>Online Weather App</h1>
 
+
+        {/* input Box */}
         <input
           type="text"
           id="user_loc"
@@ -185,10 +183,17 @@ function App() {
           autoFocus
           onKeyPress={searchLoc}
         />
-        <div style={{marginTop:'2vh'}}>
-        <em>For better experiance, type name of the city along with it's state or country</em></div>
+
+        <div style={{ marginTop: "2vh" }}>
+          <em>
+            For better experiance, type name of the city along with it's state
+            or country
+          </em>
+        </div>
         <p id="error"></p>
 
+
+        {/* Display Area of Weather */}
         <div id="weather">
           <div className="first">
             <div className="currentTemp">
@@ -267,6 +272,7 @@ function App() {
         </div>
       </div>
 
+      {/* SnackBar */}
       <Snackbar
         id="snack"
         open={open}
