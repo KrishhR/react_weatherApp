@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 body{
-  background: url(https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg) no-repeat;
-  background-size: cover;
   height: 100vh;
 }
 .container{
@@ -26,10 +24,9 @@ body{
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 #weather{
-  margin-top: 2rem;
   width: 100%;
   height: 63.5vh;
-  padding: 2rem 4rem;
+  padding: 0rem 4rem;
   display: flex;
 }
 .currentTemp{
@@ -41,7 +38,7 @@ body{
 }
 #error{
   color: red;
-  margin-top: 4vh;
+  margin-top: 3vh;
 }
 .temp{
   font-size: 6vw;
